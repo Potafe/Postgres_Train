@@ -24,9 +24,14 @@ exports.deleteAllUsersGet = asyncHandler(async function (req, res) {
   res.redirect("/");
 });
 
-exports.getSelectedUsers = asyncHandler(async function (req, res) {
-  const search = req.query.search || "";
+exports.selectedUsersGet = asyncHandler(async function (req, res) {
+  res.render("search")
+});
+
+exports.selectedUsersPost = asyncHandler(async function (req, res) {
+  const { search } = req.body || "";
+  console.log(search)
   const usernames = await db.getSelectedUsernames(search);
   console.log("Usernames", usernames)
   res.send("Usernames: " + usernames.map(user => user.username).join(", "));
-});
+})
