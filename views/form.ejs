@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        FORM
+    </title>
+</head>
+
+<body>
+    <h1>
+        FORM
+    </h1>
+    <%- include("partials/errors.ejs") %>
+        <form action="/new" method="POST">
+            <label for="userName">First Name: </label>
+            <input type="text" name="userName" id="userName" required>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/">Back to home</a>
+</body>
+
+</html>
